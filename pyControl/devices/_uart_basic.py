@@ -1,7 +1,7 @@
 import pyb
 import pyControl.hardware as hw
 
-class Uart_basic(hw.IO_object):
+class Uart_basic():
 
     def __init__(self,  port):
         assert port.UART is not None, '! Audio board needs port with UART.'
