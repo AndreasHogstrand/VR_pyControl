@@ -24,7 +24,7 @@ board = Breakout_1_2()  # Instantiate the breakout board object.
 
 # States and events.
 
-states = ['a']
+states = ['a', 'b']
 
 events = []
 
@@ -37,4 +37,9 @@ uart.init(9600, bits = 8, parity=None, stop=1, flow=0)
 def a(event):
     if event == 'entry':
         print(uart.write('a'))
-        timed_goto_state('a',1*second)
+        timed_goto_state('b',2*second)
+
+def b(event):
+    if event == 'entry':
+        print(uart.write('b'))
+        timed_goto_state('a',2*second)
