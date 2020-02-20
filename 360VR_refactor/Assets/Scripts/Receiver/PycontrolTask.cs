@@ -14,7 +14,7 @@ public class PycontrolTask : MonoBehaviour, VGOTargetDelegate
     private VGOTarget targetScript;
     private SerialPort serialPort;
     private readonly string pyControlPortName = @"\\.\COM5";
-    private char incomingData;
+    private int incomingData;
 
     private int success = 0;
     public float targetTimeout = 4.0f;
@@ -49,6 +49,21 @@ public class PycontrolTask : MonoBehaviour, VGOTargetDelegate
         success = 1;
     }
 
+    IEnumerator ProcessCommand(int command)
+    {
+        if ((command > 96) && (command < 105))
+        {
+            StartCoroutine(SpawnTarget(command - 97));
+            yield break;
+        }
+        else
+        {
+            Debug.Log("Invalid command received");
+            StartCoroutine(WaitForCommand());
+            yield break;
+        }
+    }
+
     IEnumerator WaitForCommand()
     {
         incomingData = '\0';
@@ -56,19 +71,20 @@ public class PycontrolTask : MonoBehaviour, VGOTargetDelegate
         {
             if (serialPort.BytesToRead > 0)
             {
-                incomingData = (char)serialPort.ReadChar();
-                StartCoroutine(SpawnTarget());
-                break;
+                incomingData = serialPort.ReadChar();
+                StartCoroutine(ProcessCommand(incomingData));
+                yield break;
             }
             yield return 0;
         }
     }
 
-    IEnumerator SpawnTarget()
+    IEnumerator SpawnTarget(int gridPos)
     {
+        success = 0;
         float timeoutCounter = targetTimeout;
 
-        Quaternion spawnRotation = Quaternion.Euler(gridPositions[0].Item2, gridPositions[0].Item1, gridPositions[0].Item3);
+        Quaternion spawnRotation = Quaternion.Euler(gridPositions[gridPos].Item2, gridPositions[gridPos].Item1, gridPositions[gridPos].Item3);
         targetSpawned = Instantiate(Target, new Vector3(250f, 1.6f, 250f), spawnRotation);
 
         // Find and set the delegate to the target, in order to handle *here* if a collision occurs.
@@ -91,7 +107,14 @@ public class PycontrolTask : MonoBehaviour, VGOTargetDelegate
     // Start is called before the first frame update
     void Start()
     {
-        commandDict.Add('a', SpawnTarget());
+        commandDict.Add('a', SpawnTarget(0));
+        commandDict.Add('b', SpawnTarget(1));
+        commandDict.Add('c', SpawnTarget(2));
+        commandDict.Add('d', SpawnTarget(3));
+        commandDict.Add('e', SpawnTarget(4));
+        commandDict.Add('f', SpawnTarget(5));
+        commandDict.Add('g', SpawnTarget(6));
+        commandDict.Add('h', SpawnTarget(7));
 
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = CommonUtils.frameRate;
