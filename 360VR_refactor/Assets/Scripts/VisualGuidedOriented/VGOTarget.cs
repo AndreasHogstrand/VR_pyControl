@@ -19,7 +19,7 @@ public interface VGOTargetDelegate
 public class VGOTarget : MonoBehaviour {
 
     /* Configuration variables */
-    public float CollisionDuration = 10f;
+    public float CollisionDuration = 0.5f;
     public bool DestroyOnCollision = true;
     public VGOTargetDelegate Delegate { get; set; }
     /*********/
@@ -45,6 +45,7 @@ public class VGOTarget : MonoBehaviour {
     void OnTriggerStay(Collider other)
     {
         currentTimer -= Time.deltaTime;
+        Debug.Log(currentTimer);
         if (currentTimer < 0)
         {
             if(DestroyOnCollision) Destroy(gameObject);

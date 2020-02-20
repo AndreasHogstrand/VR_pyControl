@@ -24,9 +24,9 @@ initial_state = 'a'
 def a(event):
     if event == 'entry':
         uart_basic.write('a')
-        timed_goto_state('b',2*second)
+        print('a')
+        timed_goto_state('b',6*second)
 
 def b(event):
     if event == 'entry':
-        uart_basic.write('b')
         timed_goto_state('a',2*second)
