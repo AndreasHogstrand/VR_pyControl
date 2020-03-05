@@ -45,7 +45,6 @@ public class VGOTarget : MonoBehaviour {
     void OnTriggerStay(Collider other)
     {
         currentTimer -= Time.deltaTime;
-        Debug.Log(currentTimer);
         if (currentTimer < 0)
         {
             if(DestroyOnCollision) Destroy(gameObject);

@@ -46,6 +46,7 @@ public class PycontrolTask : MonoBehaviour, VGOTargetDelegate
     public void VGOCollisionOccurred(DateTime ts)
     {
         Debug.Log("Collision occurred at " + ts);
+        serialPort.Write("a");
         success = 1;
     }
 
@@ -86,6 +87,7 @@ public class PycontrolTask : MonoBehaviour, VGOTargetDelegate
 
         Quaternion spawnRotation = Quaternion.Euler(gridPositions[gridPos].Item2, gridPositions[gridPos].Item1, gridPositions[gridPos].Item3);
         targetSpawned = Instantiate(Target, new Vector3(250f, 1.6f, 250f), spawnRotation);
+        Debug.Log("Target spawned at " + DateTime.Now);
 
         // Find and set the delegate to the target, in order to handle *here* if a collision occurs.
         targetSpawned.GetComponentInChildren<VGOTarget>().Delegate = this;
@@ -130,7 +132,6 @@ public class PycontrolTask : MonoBehaviour, VGOTargetDelegate
         }
         catch (IOException e)
         {
-            Debug.LogWarning(e);
         }
 
         StartCoroutine(WaitForCommand());
