@@ -7,7 +7,7 @@ public class PhotodiodeTarget : MonoBehaviour
     public Renderer renderer;
 
     /**
-     * Used to show the photodiode target for 1 frame
+     * Used to show the photodiode target for a short duration
      */
     public IEnumerator ShowTarget()
     {

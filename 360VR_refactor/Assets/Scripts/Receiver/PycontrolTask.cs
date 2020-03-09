@@ -49,6 +49,7 @@ public class PycontrolTask : MonoBehaviour, VGOTargetDelegate
     public void VGOCollisionOccurred(DateTime ts)
     {
         Debug.Log("Collision occurred at " + ts);
+        StartCoroutine(photodiodeTarget.ShowTarget());
         serialPort.Write("a");
         success = 1;
     }
@@ -96,15 +97,20 @@ public class PycontrolTask : MonoBehaviour, VGOTargetDelegate
         // Find and set the delegate to the target, in order to handle *here* if a collision occurs.
         targetSpawned.GetComponentInChildren<VGOTarget>().Delegate = this;
 
-        // Set a destroy timer equals to the chose timeoutTarget. If the target has already been deallocated before its timeout, this function has no effect.
-        Destroy(targetSpawned, targetTimeout);
-
         // Wait for at maximum the targetTimeout
         while ((timeoutCounter > 0) && (success != 1))
         {
             timeoutCounter -= Time.deltaTime;
             yield return 0;
         }
+
+        //If target was not destroyed by collision
+        if (success != 1)
+        {
+            Destroy(targetSpawned);
+            StartCoroutine(photodiodeTarget.ShowTarget());
+        }
+
         StartCoroutine(WaitForCommand());
     }
 
