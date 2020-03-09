@@ -9,6 +9,9 @@ public class PycontrolTask : MonoBehaviour, VGOTargetDelegate
 {
     /* Scene variables */
     public GameObject Target; // This should be attached to the scene object called `Target'
+    public GameObject PhotodiodeTargetObject; //This should be attached to the prefab object called `PhotodiodeTarget'
+
+    private PhotodiodeTarget photodiodeTarget;
 
     /* Private variables */
     private VGOTarget targetScript;
@@ -87,6 +90,7 @@ public class PycontrolTask : MonoBehaviour, VGOTargetDelegate
 
         Quaternion spawnRotation = Quaternion.Euler(gridPositions[gridPos].Item2, gridPositions[gridPos].Item1, gridPositions[gridPos].Item3);
         targetSpawned = Instantiate(Target, new Vector3(250f, 1.6f, 250f), spawnRotation);
+        StartCoroutine(photodiodeTarget.ShowTarget());
         Debug.Log("Target spawned at " + DateTime.Now);
 
         // Find and set the delegate to the target, in order to handle *here* if a collision occurs.
@@ -117,6 +121,8 @@ public class PycontrolTask : MonoBehaviour, VGOTargetDelegate
         commandDict.Add('f', SpawnTarget(5));
         commandDict.Add('g', SpawnTarget(6));
         commandDict.Add('h', SpawnTarget(7));
+
+        photodiodeTarget = PhotodiodeTargetObject.GetComponent<PhotodiodeTarget>();
 
         QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = CommonUtils.frameRate;
