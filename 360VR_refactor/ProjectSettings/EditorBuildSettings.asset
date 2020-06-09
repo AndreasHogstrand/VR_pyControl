@@ -8,40 +8,43 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/projector_calibration.unity
     guid: 5a499a779785f444391ae0f38ec43741
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 75da221f83629e244b25018adb50c617
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage0_loader.unity
     guid: ec8b90fd3623ce14fb8ff4ef53f57bef
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage0.unity
     guid: 46c42fe2849f20643b06c3fabac18c60
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage1_loader.unity
     guid: 4076c3f0cbc936c48a8b3745e54fc5a1
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage1.unity
     guid: d315d98f2c1f1a8408f36bb63760d16a
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage2_loader.unity
     guid: efb5715a213fbb449af4ed89e3233887
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage2.unity
     guid: 2eb7016041ac8144ba06d4346704574f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage3_loader.unity
     guid: f3bfdc1648795d24a8fb909359f48e7b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage3.unity
     guid: 1fcde1d51e9343c45bee009efae6e960
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage4_loader.unity
     guid: fe49ae00a22efad49a686f0f3cdfba4e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage4.unity
     guid: 04ae8801d68a2ae479667c31aa9a48ce
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Stage4flat.unity
     guid: 86c68c65fdafae94a8dcc458e2587beb
+  - enabled: 1
+    path: Assets/Scenes/ReceiverScene.unity
+    guid: 7310c188fd9132a439ec06959b4f96e6
   m_configObjects: {}

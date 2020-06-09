@@ -1,0 +1,40 @@
+I Experiment name  : run_task
+I Task name : increasing_target_task
+I Subject ID : inc4
+I Start date : 2020/05/14 12:26:02
+
+S {'target1': 2, 'failure': 3, 'white_noise': 1}
+
+E {'check_uart': 5, 'photodiode_event': 6, 'reward': 8, 'target_timeout': 7, 'white_noise_off': 4}
+
+D 0 1
+D 1001 2
+D 3001 3
+D 4001 1
+D 5002 2
+D 7002 3
+D 8002 1
+D 9003 2
+D 11003 3
+D 12003 1
+D 13004 2
+D 15004 3
+D 16004 1
+D 17005 2
+D 19005 3
+D 20005 1
+D 21006 2
+D 23006 3
+D 24006 1
+D 25007 2
+D 27007 3
+D 28007 1
+D 29008 2
+D 31008 3
+D 32008 1
+D 33009 2
+D 35009 3
+D 36009 1
+D 37010 2
+D 39010 3
+D 40010 1
