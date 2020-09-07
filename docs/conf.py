@@ -21,6 +21,7 @@ project = 'VR_pycontrol'
 copyright = '2020, Andreas Hogstrand'
 author = 'Andreas Hogstrand'
 
+master_doc = 'contents'
 
 # -- General configuration ---------------------------------------------------
 
