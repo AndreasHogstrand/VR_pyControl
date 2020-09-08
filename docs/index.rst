@@ -20,6 +20,12 @@ PyControl is a system of open source hardware and software for controlling behav
 
 Unity is used for 3D visualisation and geometry (collision detection). Unity is treated as a hardware device by PyControl, and communicated with over the behaviour ports' UART serial (`hardware devices in pyControl <https://pycontrol.readthedocs.io/en/latest/user-guide/hardware/>`_). The main functionality of Unity is to place and render the targets and pointer, and detect collisions between the two.
 
+**Overview**
+
+.. image:: images/FullSystem.png
+   :width: 800
+
+
 
 Indices and tables
 ==================
