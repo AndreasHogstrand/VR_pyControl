@@ -33,3 +33,34 @@ To test the environment has installed correctly, navigate to the GUI folder with
 	python pyControl_GUI.py
 
 If the command executes and opens the pyControl GUI, the installation has been successful.
+
+Setting up Unity
+############################
+The Unity Hub can be downloaded wuth a personal license at https://store.unity.com/download?ref=personal. Completing installation and setup should allow the Unity Editor to be opened; this may be tested with an example project. 
+
+To set up the Unity portion of this project, use the Add button on the Projects tab of Unity Hub and navigate to the folder /YourDirectory/VR_pyControl/360VR_refactor/. The project currently runs on Unity 2019.2.9f1 but may be upgraded by selecting a more recent patch under "Unity Version" in the hub.
+
+Launching the project should present a screen similar to Figure 2: 
+
+.. image:: images/UnityLaunch.png
+   :width: 800
+
+*Figure 2: Unity upon first launch*
+
+Testing Unity Receiver
+*************************
+Before connecting the Pycontrol board, the Unity portion of the project should be tested with no additional hardware plugged in:
+
+To test the Unity portion of this project (also referred to as the Unity receiver), navigate to the scene "ReceiverScene". In the Project window (Figure 2, bottom window), select "Scenes" and then "ReceiverScene". This should load the correct scene for receiver operation (Figure 3).
+
+.. image:: images/ReceiverScene.png
+   :width: 800
+
+*Figure 3: Unity loaded into the Receiver scene*
+
+To test the project is running correctly press the play arrow (Figure 2, top centre). The green fixation pointer should appear, and should be movable in debug mode with the arrow keys.
+
+.. image:: images/UnityTest.png
+   :width: 800
+
+*Figure 4: Unity loaded into the Receiver scene*
