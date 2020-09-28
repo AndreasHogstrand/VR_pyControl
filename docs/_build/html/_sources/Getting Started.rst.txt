@@ -40,7 +40,7 @@ To test the board, select "Blinker" from the task drop down, Upload, then Start.
 
 The VR_pycontrol task may also be tested by selecting "VGO_task" from the task dropdown; this task will run even without Unity, but all trials will register as fails (Figure 2).
 
-.. image:: images/GUI_noUnity.png
+.. image:: ../docs/images/GUI_noUnity.png
    :width: 800
 
 *Figure 2: Running VGO_task disconnected from Unity*

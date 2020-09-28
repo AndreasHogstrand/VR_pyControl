@@ -47,7 +47,7 @@
 <div class="section" id="id1">
 <h2>Overview<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <a class="reference internal image-reference" href="_images/FullSystem.png"><img alt="_images/FullSystem.png" src="_images/FullSystem.png" style="width: 800px;" /></a>
-<p><em>Figure: Overview of VR_pycontrol system showing all components</em></p>
+<p><em>Figure 1: Overview of VR_pycontrol system showing all components</em></p>
 <p>The purpose of this system is to provide a framework for experiments investigating the head movements of mice in response to visual targets. These experiments typically take the form of generating targets within the animal’s field of vision, and giving a reward if the mouse fixates upon the target.</p>
 <p>The specifics of task design are specified in micropython using a task definition file, which is then loaded onto the Pyboard. The Pyboard runs this experiment, determining when and where targets should be generated. When a target is required, a command is sent to Unity to create the target. Unity tracks the mouse’s fixation point with a cursor, and upon collision between target and cursor returns a message to the PyBoard. The PyBoard checks for either a succesful trial or a failed (timeout) trial, and then proceeds with the experiment accordingly. Logging and control of other hardware devices, such as a photodiode to determine the timestamp of target appearance/disappearance, is also controlled by the Pyboard.</p>
 <p>Further work on this project should immediately be directed towards logging head sensor data on the Pyboard, as this data is important and should be recorded alongside other timestamps.</p>

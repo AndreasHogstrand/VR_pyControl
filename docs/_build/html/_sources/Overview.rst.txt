@@ -20,7 +20,7 @@ Overview
 .. image:: images/FullSystem.png
    :width: 800
 
-*Figure: Overview of VR_pycontrol system showing all components*
+*Figure 1: Overview of VR_pycontrol system showing all components*
 
 The purpose of this system is to provide a framework for experiments investigating the head movements of mice in response to visual targets. These experiments typically take the form of generating targets within the animal's field of vision, and giving a reward if the mouse fixates upon the target.
 

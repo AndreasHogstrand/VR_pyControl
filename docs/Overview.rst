@@ -17,7 +17,7 @@ Unity is used for 3D visualisation and geometry (collision detection). Unity is 
 Overview
 ############
 
-.. image:: images/FullSystem.png
+.. image:: ../docs/images/FullSystem.png
    :width: 800
 
 *Figure 1: Overview of VR_pycontrol system showing all components*
