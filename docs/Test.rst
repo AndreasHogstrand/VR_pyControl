@@ -2,5 +2,5 @@
 Test
 ===============
 
-.. image:: _static/UnityLaunch.png
+.. image:: /images/UnityLaunch.png
    :width: 800
