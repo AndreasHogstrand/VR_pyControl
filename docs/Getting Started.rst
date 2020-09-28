@@ -26,13 +26,24 @@ PyControl's dependencies may be installed using the following commands:
 
 To test the environment has installed correctly, navigate to the GUI folder within the Pycontrol directory and run the gui using
 
-
-
 .. code-block:: none
 
 	python pyControl_GUI.py
 
 If the command executes and opens the pyControl GUI, the installation has been successful.
+
+Testing PyControl
+*********************
+To test the environment and board, connect the Pycontrol board to the computer via the mico-USB at the head of the board. Run the PyControl GUI, select the COM port from the drop down menu, and click connect. Once connected, load framework scripts onto the board using "Config, Load framework". Providing no errors are contained within framework scripts, the GUI terminal should return "Transfering pyControl framework to pyboard... OK".
+
+To test the board, select "Blinker" from the task drop down, Upload, then Start. This should cause the blue LED on the Pyboard to blink, while returning state information to the GUI.
+
+The VR_pycontrol task may also be tested by selecting "VGO_task" from the task dropdown; this task will run even without Unity, but all trials will register as fails (Figure 2).
+
+.. image:: images/GUI_noUnity.png
+   :width: 800
+
+*Figure 2: Running VGO_task disconnected from Unity*
 
 Setting up Unity
 ############################
@@ -40,27 +51,27 @@ The Unity Hub can be downloaded wuth a personal license at https://store.unity.c
 
 To set up the Unity portion of this project, use the Add button on the Projects tab of Unity Hub and navigate to the folder /YourDirectory/VR_pyControl/360VR_refactor/. The project currently runs on Unity 2019.2.9f1 but may be upgraded by selecting a more recent patch under "Unity Version" in the hub.
 
-Launching the project should present a screen similar to Figure 2: 
+Launching the project should present a screen similar to Figure 3: 
 
 .. image:: images/UnityLaunch.png
    :width: 800
 
-*Figure 2: Unity upon first launch*
+*Figure 3: Unity upon first launch*
 
 Testing Unity Receiver
 *************************
 Before connecting the Pycontrol board, the Unity portion of the project should be tested with no additional hardware plugged in:
 
-To test the Unity portion of this project (also referred to as the Unity receiver), navigate to the scene "ReceiverScene". In the Project window (Figure 2, bottom window), select "Scenes" and then "ReceiverScene". This should load the correct scene for receiver operation (Figure 3).
+To test the Unity portion of this project (also referred to as the Unity receiver), navigate to the scene "ReceiverScene". In the Project window (Figure 3, bottom window), select "Scenes" and then "ReceiverScene". This should load the correct scene for receiver operation (Figure 4).
 
 .. image:: images/ReceiverScene.png
    :width: 800
 
-*Figure 3: Unity loaded into the Receiver scene*
+*Figure 4: Unity loaded into the Receiver scene*
 
-To test the project is running correctly press the play arrow (Figure 2, top centre). The green fixation pointer should appear, and should be movable in debug mode with the arrow keys.
+To test the project is running correctly press the play arrow (Figure 3, top centre). The green fixation pointer should appear, and should be movable in debug mode with the arrow keys.
 
 .. image:: images/UnityTest.png
    :width: 800
 
-*Figure 4: Unity loaded into the Receiver scene*
+*Figure 5: Unity loaded into the Receiver scene*
