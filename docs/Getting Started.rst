@@ -53,7 +53,7 @@ To set up the Unity portion of this project, use the Add button on the Projects 
 
 Launching the project should present a screen similar to Figure 3: 
 
-.. image:: imagesc/UnityLaunch.png
+.. image:: images/UnityLaunch.png
    :width: 800
 
 *Figure 3: Unity upon first launch*
