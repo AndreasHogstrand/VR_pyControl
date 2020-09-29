@@ -40,7 +40,7 @@ To test the board, select "Blinker" from the task drop down, Upload, then Start.
 
 The VR_pycontrol task may also be tested by selecting "VGO_task" from the task dropdown; this task will run even without Unity, but all trials will register as fails (Figure 2).
 
-.. image:: _static/GUI_noUnity.png
+.. image:: images/GUI_noUnity.png
    :width: 800
 
 *Figure 2: Running VGO_task disconnected from Unity*
@@ -53,7 +53,7 @@ To set up the Unity portion of this project, use the Add button on the Projects 
 
 Launching the project should present a screen similar to Figure 3: 
 
-.. image:: _static/UnityLaunch.png
+.. image:: imagesc/UnityLaunch.png
    :width: 800
 
 *Figure 3: Unity upon first launch*
@@ -64,14 +64,14 @@ Before connecting the Pycontrol board, the Unity portion of the project should b
 
 To test the Unity portion of this project (also referred to as the Unity receiver), navigate to the scene "ReceiverScene". In the Project window (Figure 3, bottom window), select "Scenes" and then "ReceiverScene". This should load the correct scene for receiver operation (Figure 4).
 
-.. image:: _static/ReceiverScene.png
+.. image:: images/ReceiverScene.png
    :width: 800
 
 *Figure 4: Unity loaded into the Receiver scene*
 
 To test the project is running correctly press the play arrow (Figure 3, top centre). The green fixation pointer should appear, and should be movable in debug mode with the arrow keys.
 
-.. image:: _static/UnityTest.png
+.. image:: images/UnityTest.png
    :width: 800
 
 *Figure 5: Unity loaded into the Receiver scene*
